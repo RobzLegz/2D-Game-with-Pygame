@@ -6,6 +6,9 @@ COLOR = [1, 1, 1]
 
 ufo_image = pygame.image.load("ufo.png")
 
+x_pos = 0
+y_pos = 0
+
 while True:
     window = pygame.display.set_mode([800, 500])
     pygame.display.set_caption("Starship")
@@ -15,14 +18,14 @@ while True:
             pygame.quit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_w:
-                print("UP")
-            if event.key == pygame.K_a:
-                print("LIFT")
-            if event.key == pygame.K_d:
-                print("RIGHT")
-            if event.key == pygame.K_s:
-                print("DOWN")
+                y_pos -= 10
+            elif event.key == pygame.K_a:
+                x_pos -= 10
+            elif event.key == pygame.K_d:
+                x_pos += 10
+            elif event.key == pygame.K_s:
+                y_pos += 10
 
     window.fill(COLOR)
-    window.blit(ufo_image, [380, 210])
+    window.blit(ufo_image, [x_pos, y_pos])
     pygame.display.update()
