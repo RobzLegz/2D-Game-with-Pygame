@@ -4,7 +4,8 @@ pygame.init()
 
 COLOR = [1, 1, 1]
 
-ufo_image = pygame.image.load("ufo.png")
+UFO_IMAGE = pygame.image.load("ufo.png")
+BACKGROUND_IMAGE = pygame.image.load("stars.jpg")
 
 x_pos = 0
 y_pos = 0
@@ -27,5 +28,6 @@ while True:
                 y_pos += 10
 
     window.fill(COLOR)
-    window.blit(ufo_image, [x_pos, y_pos])
+    window.blit(BACKGROUND_IMAGE, [0, 0])
+    window.blit(UFO_IMAGE, [x_pos, y_pos])
     pygame.display.update()
